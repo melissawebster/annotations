@@ -1,0 +1,57 @@
+AXIOS SETUP (REACT + FASTAPI)
+==============================================================================
+
+1 = Installation
+
+> yarn add axios
+
+==============================================================================
+
+2 = On App.tsx, import and configure. Example:
+
+
+import axios from "axios"
+
+function App() {
+
+  function requestAxios () {
+    axios
+      .get("http://127.0.0.1:8000/")
+  }
+
+  return (
+    <>
+      <div>
+        <button onClick={requestAxios}>Fazer request</button>
+      </div>
+
+    </>
+  )
+}
+
+export default App
+
+==============================================================================
+
+3 = On FastAPI, import and configure:
+
+from fastapi import FastAPI 
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI() 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_credentials=True,
+    allow_origins=["http://localhost:5173"]
+)
+
+@app.get("/")
+def root():
+    return {"message": "it works"}
+
+==============================================================================
+
+4 = Open the project in the browser and Inspect > Network to check if it works

@@ -1,0 +1,154 @@
+FASTAPI BASIC APP
+
+===================================================================================
+
+1 = Init with poetry 
+
+> poetry init
+
+===================================================================================
+
+2 = Create virtual environment
+
+> poetry shell
+
+===================================================================================
+
+3 = Install dependencies 
+
+> poetry add fastapi uvicorn sqlalchemy pydantic sqlalchemy alembic
+
+===================================================================================
+
+4 = Create folders
+
+root_folder
+|
+|-- app
+|   |-- db
+|   |-- routes
+|   |-- schemas
+
+and add __init__.py in each
+
+===================================================================================
+
+5 = Create main.py in /app
+
+
+from fastapi import FastAPI 
+
+app = FastAPI()
+
+@app.get("/test") 
+def test(): 
+    return {"Hello": "Mars"}
+
+# if VSCode doesn't read the fastapi module, it might be because it is reading 
+through the global python and not the local virtual env.
+
+===================================================================================
+
+6 = Test if it works
+
+> poetry run uvicorn app.main:app --host 0.0.0.0
+
+ http://127.0.0.1:8000/
+
+===================================================================================
+
+7 = Create a blank SQLite file (with DBeaver or SQLite Studio)
+
+===================================================================================
+
+8 = Connect SQLAlchemy to the database
+    Create connection.py inside /db
+
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+DATABASE_URL = "sqlite:///database.db"
+
+Session = sessionmaker(bind=create_engine(DATABASE_URL))
+
+Engine = create_engine(DATABASE_URL)
+
+===================================================================================
+
+9 = Create models.py inside /db
+
+
+from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column, Integer, Float, String
+
+Base = declarative_base()
+
+class Drug(Base):
+    __tablename__ = 'drug'
+    id = Column(Integer, nullable=False, primary_key=True)
+    name = Column(String, nullable=False)
+    price = Column(Float, nullable=False)
+    stock = Column(Integer, nullable=False)
+
+===================================================================================
+
+10 = Create schemas.py inside /schemas
+
+
+from pydantic import BaseModel
+
+class DrugSchema(BaseModel):
+    name: str
+    price: float
+    stock: int
+
+    class ConfigDict:
+        json_schema_extra = {
+            "example": {
+                "name": "Piroxicam",
+                "price": 20,
+                "stock": "50"
+            }
+        }
+
+===================================================================================
+
+11 = Configure Alembic
+
+> alembic init app/alembic
+
+it generates alembic.ini in the root folder and a folder called /alembic inside /app
+
+===================================================================================
+
+12 = In alembic.ini, change the line 63 to:
+
+sqlalchemy.url = sqlite:///app/db/database
+
+===================================================================================
+
+13 = Go to /alembic/env.py and import Base
+
+from app.db.models import Base
+
+and change the variable target_metadata to:
+
+target_metadata = Base.metadata
+
+===================================================================================
+
+14 = Make the first migration
+
+> alembic revision --autogenerate -m "first migration"
+
+> alembic upgrade head
+
+It's done!
+
+
+
+
+
+
+
