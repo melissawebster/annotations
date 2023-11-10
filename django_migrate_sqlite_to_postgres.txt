@@ -1,0 +1,62 @@
+MIGRATE SQLITE TO POSTGRESQL (DJANGO)
+
+
+1 = Check if there are no pending migrations
+
+> python manage.py makemigrations
+> python manage.py migrate
+
+=================================================================================
+
+2 = Generate a JSON file that takes the current database data (ex: dumpdata.json)
+
+> python manage.py dumpdata > dumpdata.json
+
+Important: change the file encoding to UTF-8
+
+=================================================================================
+
+3 = Install psycopg2
+
+> pip install psycopg2
+
+=================================================================================
+
+4 = Go to settings.py and set the database settings:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'test',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+=================================================================================
+
+5 = Sync the database
+
+> python manage.py migrate --run-syncdb
+
+=================================================================================
+
+6 = Clean the data that comes with the database by default
+
+> python manage.py shell
+
+> from django.contrib.contenttypes.models import ContentType
+> ContentType.objects.all().delete()
+> exit()
+
+=================================================================================
+
+7 = Load the JSON file data into the database
+
+> python manage.py loaddata datadump.json
+
+=================================================================================
+
+8 =  Check in the database if it works!
