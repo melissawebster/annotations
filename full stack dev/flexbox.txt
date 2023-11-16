@@ -1,0 +1,33 @@
+
+
+Flexbox is about creating elements in rows, columns or both and makes it easier to develop complex or responsive layouts than with pure CSS. Ex:
+
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+Set the display: flex and tell its direction is a column. 
+It means that the main axis is y (column) and the cross axis is x (row). 
+
+justify-content specifies how items are positioned along the main axis
+align-items specifies the same for the cross axis
+
+==================
+
+
+The Flexbox layout is based on a parent-child relationship. 
+The parent becomes a flex container and the children become flex items.
+
+==================
+
+Also:
+
+.item {
+  flex: 1;
+}
+
+In this case, the .item elements will expand to take up the full width of their container, distributing the available space equally. If the container's size decreases, all .item elements will reduce their size equally

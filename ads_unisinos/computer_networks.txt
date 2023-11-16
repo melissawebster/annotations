@@ -1,0 +1,46 @@
+COMPUTER NETWORKS
+
+
+Network technologies:
+
+- Ethernet (the most common for wired networks)
+
+- Wifi (the most common for wireless networks)
+
+- Optical fiber (the strongest of all, but still very expensive and fragile)
+
+- Mobile internet (2G, 3G, 4G...)
+
+===============================================================================
+
+PROTOCOLS
+
+A protocol is a set of rules and guidelines that define how data is 
+transmitted and received between devices or systems.
+
+All the networks need very precise communication protocols in a way that 
+files/data will be succesfully shared
+
+These protocols are so complex that they need a hierarchical organization
+
+===============================================================================
+
+IP PROTOCOL
+
+Internet Protocol - one of the pillars of the Internet nowadays
+Each computer connected to the Internet has an IP address. 
+
+DNS PROTOCOL
+
+Domain Name System - a fundamental component of the internet that translates 
+human-readable domain names (such as www.example.com) into IP addresses 
+(such as 192.0.2.1). 
+
+SMTP PROTOCOL
+
+Simple Mail Transfer Protocol - implements the e-mail service.
+
+HTTP PROTOCOL
+
+HyperText Transfer Protocol - an application-layer protocol used for transmitting
+hypermedia documents, such as HTML, between web browsers and web servers
