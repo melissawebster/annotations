@@ -3,3 +3,21 @@ REACT NATIVE + EXPO
 
 PROJECT SETUP
 
+1 = > yarn create expo-app project-name
+
+2 = > yarn start
+
+
+=========================================
+
+By default, every view in React Native uses flexbox, event if
+you don't assign any special style (it differs from web dev)
+
+In web dev, if you use flexbox the default is a row orientation
+But in Native, the default is a column orientation
+
+Buttons do not have style props
+
+
+To allow user interaction, you need to handle EVENTS
+
