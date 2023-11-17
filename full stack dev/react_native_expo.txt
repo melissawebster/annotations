@@ -1,14 +1,13 @@
 REACT NATIVE + EXPO 
-
-
 PROJECT SETUP
 
-1 = > yarn create expo-app project-name
+> yarn create expo-app project-name
+> yarn start
 
-2 = > yarn start
+> a to load on androd
+> r to reload
 
-
-=========================================
+==================================================================================================
 
 By default, every view in React Native uses flexbox, event if
 you don't assign any special style (it differs from web dev)
@@ -16,8 +15,50 @@ you don't assign any special style (it differs from web dev)
 In web dev, if you use flexbox the default is a row orientation
 But in Native, the default is a column orientation
 
-Buttons do not have style props
+In Native, Buttons do not have style props
 
+==================================================================================================
 
 To allow user interaction, you need to handle EVENTS
 
+CASE FOR ADDING AN ITEM TO A LIST:
+
+const [enteredItem, setEnteredItem] = useState('')
+
+  // enteredItem is the STATE VARIABLE
+  // setEnteredItem is a FUNCTION that updates the state variable
+
+
+function handleEnteredItem(enteredText) {
+  setEnteredItem(enteredText)
+}
+
+  // a function that injects the text typed by the user into the setEnteredItemText
+
+const [itemsList, setItemsList] = useState([])
+
+  // declares the items list, initially empty
+
+function handleItemsList() {
+    setItemsList((currentItemsList) => 
+        [...currentItemsList, enteredItem])
+}
+
+  // a function that injects another function to the setItemsList
+  // the currentItemsList injects the enteredItem to what is already in the list
+
+==================================================================================================
+
+STYLING DIFFERENCES BETWEEN ANDROID AND iOS:
+
+Native is built to allow you to write one code to both devices, 
+but you might need to make some tiny fixes to really achieve it
+
+For instance, if you create a <Text> and style it, 
+some features might not work on iOS  - like border radius
+
+Many times if you create a <View> to wrap this element,
+and style this View and the element inside separately,
+it is a good workaround
+
+==================================================================================================
