@@ -95,8 +95,6 @@ on the screen or not. It might cause performance issues.
     - itemData.index (0, 1, 2...)
     - itemData.item (the value)
   - With FlatList, no need to use the key prop
-    - Instead, make each entered item an object with a text and a key, for instance:
-      { text: enteredItem, key: Math.random().toString() }
 
   So it gets like this:
 
@@ -105,7 +103,7 @@ on the screen or not. It might cause performance issues.
     renderItem={(itemData) => {
       return (
         <View>
-          <Text}>{itemData.item.text}</Text>
+          <Text}>{itemData.item}</Text>
         </View>
       )
     }} 
