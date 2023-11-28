@@ -108,3 +108,21 @@ on the screen or not. It might cause performance issues.
       )
     }} 
   />
+
+==================================================================================================
+
+<PRESSABLE> </PRESSABLE>
+
+Pressable is a way forward (in comparison to Touchable) to make an element pressable
+
+function customFunction() {
+  console.log('delete item')
+}
+
+<Pressable onPress={customFunction}>
+  <View>
+    <Text>Content</Text>
+  </View>
+</Pressable>
+
+
