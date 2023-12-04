@@ -1,0 +1,67 @@
+
+ONE TASK PER SCREEN
+
+- reduces the user's effort to get what they want
+
+- makes learning easier
+
+- also makes it easier to add more features in the future
+
+
+LESS IS MORE
+
+- remove any unnecessary element that is not about the content itself
+
+
+BREATHING SPACE
+
+"The blank space should be considered an active element, not a passive background" Jan Tschihold
+
+- make use of blank spaces around and between the elements where the user eye can rest
+
+- a good use of the blank spaces brings clarity, different contents won't be confused
+
+
+SINGLE HAND OPERATION
+
+- Make sure your app can be browsed with one hand in a big screen
+
+=================================================================================
+
+FONT SIZE
+
+35px = Heading h1 ==== Highlight
+30px = Heading h2 ==== Headline
+25px = Heading h3 ==== Subheading
+20px = Heading h4 ==== Titles
+16px = Heading h5 ==== Subtitles
+12px = Heading h6 ==== Paragraphs
+10px = Labels ======== Tooltips / Infos / Forms
+
+Paragraphs with shorter lines are more comfortable to read
+
+=================================================================================
+
+PIXEL DENSITY
+The quantity of pixels contained in a physical space (e.g. inch)
+
+=================================================================================
+
+8 dp and 4 dp GRADES
+(check the images in this folder)
+
+All the elements, alignments and spaces should be measured in a 8dp or 4dp grade
+
+=================================================================================
+
+BUTTON SIZE to accomodate the finger touch dimension
+(check the images in this folder)
+
+buttons should have a certain space between them so the user
+won't touch the side button (instead of their target) by accident
+
+
+=================================================================================
+
+
+
