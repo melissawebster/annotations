@@ -1,0 +1,10 @@
+BIG O (operations) is a way of comparing mathematically two or more sets of code 
+
+TIME COMPLEXITY compares by number of operations 
+
+
+
+================================================================================
+
+CLASSES
+when you create a class, you can create your own data type 
