@@ -78,7 +78,58 @@ A list is a contiguous place in memory, they are all next to each other in memor
 
 A linked list has its nodes spread all over the memory
 
+HEAD        TAIL
+ |           |
+ 11  -> 3 -> 7 -> 
 
+The last node points to none
+
+---
+
+! The NODE is the value and the pointer ! ( 3 -> )
+
+Under the hood, a node is like a dictionary:
+
+{
+  "value": 7,
+  "next": None
+}
+
+---
+
+So the linked list, under the hood, is like a dict:
+Actually like a set of nested dicts
+
+head: {
+        "value": 11,
+        "next": {
+                  "value": 3,
+                  "next": {
+tail: ------------------->  "value": 7,
+                            "next": None
+                          }
+                }
+      }
+
+---
+
+To create a linked list, you can do it by creating a class:
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+
+list1 = LinkedList(5)
+
+print(list1.head.value)
 
 
 
