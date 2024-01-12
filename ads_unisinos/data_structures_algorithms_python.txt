@@ -4,7 +4,84 @@ TIME COMPLEXITY compares by number of operations
 
 
 
-================================================================================
+====================== CLASSES ====================== 
 
-CLASSES
-when you create a class, you can create your own data type 
+in python or other languages you can create a string or other data types with built-in features
+but when you create a class, you can create your own data type 
+
+============
+
+class Cookie:
+  def __init__ (self, color)    
+    self.color = color
+
+cookie_one = Cookie('green')
+cookie_two = Cookie('blue')
+
+# self means it is a method inside of a class, not a standalone function
+
+# the __init__ method is a constructor used for initializing the attributes of an object when it is created
+
+# __init__ allows you to set the initial state of the object
+
+# __init__ is not mandatory, but it is often used to perform setup tasks when creating an instance of a class
+
+
+====================== POINTERS ====================== 
+
+num1 = 13
+num2 = num1
+
+Num 1 points to 140715938141352 address in memory
+Num 2 points to 140715938141352 address in memory
+
+num2 = 13
+
+Num 2 points to 140715938141352 address in memory
+
+# They still point to the same address because integers are imutable
+# Once you put an integer in a place of memory, you cannot change it
+
+-----
+Now if you create a dictionary:
+
+dict1 = {'value': 11}
+dict2 = {'value': 11}
+
+Dict1 points to 240715938141381 address in memory
+Dict2 points to 240715938141381 address in memory
+
+They will point to the same adress as well. But if we state:
+
+dict['value'] = 22
+
+Will 22 overwrite the 11 on the existing dict, or create a new one in memory?
+
+dict1 = {'value': 22}
+dict2 = {'value': 22}
+
+Dict1 points to 240715938141381 address in memory
+Dict2 points to 240715938141381 address in memory
+
+It will overwrite 11 (both on dict1 and dict2) and keep the same address in memory
+
+----
+With dictionaries you can change the value and keep pointing to the same address in memory
+With integers, you can't. You change the number, you change the address.
+-----
+
+====================== LINKED LISTS ====================== 
+
+Differently from lists, linked lists don't have indexes
+
+A list is a contiguous place in memory, they are all next to each other in memory
+
+A linked list has its nodes spread all over the memory
+
+
+
+
+
+
+
+
